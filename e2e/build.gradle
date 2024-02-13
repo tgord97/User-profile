@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.iprody.user-profile.e2e'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '21'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '7.15.0'
+    implementation group: 'io.cucumber', name: 'cucumber-testng', version: '7.15.0'
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '7.15.0'
+    implementation group: 'net.masterthought', name: 'cucumber-reporting', version: '5.7.8'
+    testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+}
+
+
+test {
+    useJUnit();
+}
+
+tasks.register('cucumberCli') {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = [
+                    '--plugin', 'pretty',
+                    '--plugin', 'html:build/cucumber/cucumber-report.html',
+                    '--glue', 'com.iprody.test',
+                    'src/test/resources']
+        }
+    }
+}
