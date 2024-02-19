@@ -3,7 +3,7 @@ name: Create and publish a Docker image
 on:
   push:
     branches:
-      - develop
+      - dev
 
 env:
   REGISTRY: ghcr.io
@@ -32,10 +32,10 @@ jobs:
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
 
       - name: Set execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x ./user-profile/gradlew
 
       - name: Run build with Gradle Wrapper
-        run: ./gradlew build
+        run: ./user-profile/gradlew build
 
       - name: Setup Docker buildx
         uses: docker/setup-buildx-action@v2
@@ -58,7 +58,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: ./user-profile/
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

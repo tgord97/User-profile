@@ -1,0 +1,244 @@
+2024-03-01T11:52:50.822+03:00 trace-id= span-id= 11:52:50.822 [main] INFO  c.i.u.u.UserProfileServiceApplication -- Starting UserProfileServiceApplication using Java 21.0.2 with PID 1528 (C:\JAVA\Projects\user-profile\user-profile\build\classes\java\main started by - in C:\JAVA\Projects\user-profile)
+ 1528 --- [main] [                                                 ] c.i.u.u.UserProfileServiceApplication    : Starting UserProfileServiceApplication using Java 21.0.2 with PID 1528 (C:\JAVA\Projects\user-profile\user-profile\build\classes\java\main started by - in C:\JAVA\Projects\user-profile)
+2024-03-01T11:52:50.825+03:00 trace-id= span-id= 11:52:50.825 [main] INFO  c.i.u.u.UserProfileServiceApplication -- The following 1 profile is active: "development"
+ 1528 --- [main] [                                                 ] c.i.u.u.UserProfileServiceApplication    : The following 1 profile is active: "development"
+2024-03-01T11:52:52.028+03:00 trace-id= span-id= 11:52:52.028 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+ 1528 --- [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T11:52:52.049+03:00 trace-id= span-id= 11:52:52.049 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate -- Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+ 1528 --- [main] [                                                 ] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JPA repository interfaces.
+2024-03-01T11:52:53.031+03:00 trace-id= span-id= 11:52:53.031 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat initialized with port 8080 (https)
+ 1528 --- [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (https)
+2024-03-01T11:52:53.046+03:00 trace-id= span-id= 11:52:53.046 [main] INFO  o.a.catalina.core.StandardService -- Starting service [Tomcat]
+ 1528 --- [main] [                                                 ] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-01T11:52:53.046+03:00 trace-id= span-id= 11:52:53.046 [main] INFO  o.a.catalina.core.StandardEngine -- Starting Servlet engine: [Apache Tomcat/10.1.18]
+ 1528 --- [main] [                                                 ] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.18]
+2024-03-01T11:52:53.115+03:00 trace-id= span-id= 11:52:53.115 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring embedded WebApplicationContext
+ 1528 --- [main] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-03-01T11:52:53.116+03:00 trace-id= span-id= 11:52:53.116 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext -- Root WebApplicationContext: initialization completed in 2238 ms
+ 1528 --- [main] [                                                 ] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2238 ms
+2024-03-01T11:52:53.807+03:00 trace-id= span-id= 11:52:53.807 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Starting...
+ 1528 --- [main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-01T11:52:53.822+03:00 trace-id= span-id= 11:52:53.822 [main] DEBUG org.postgresql.Driver -- Loading driver configuration via classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+ 1528 --- [main] [                                                 ] org.postgresql.Driver                    : Loading driver configuration via classloader jdk.internal.loader.ClassLoaders$AppClassLoader@3fee733d
+2024-03-01T11:52:53.823+03:00 trace-id= span-id= 11:52:53.823 [main] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [main] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:53.833+03:00 trace-id= span-id= 11:52:53.833 [main] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:53.834+03:00 trace-id= span-id= 11:52:53.834 [main] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:53.835+03:00 trace-id= span-id= 11:52:53.835 [main] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:53.844+03:00 trace-id= span-id= 11:52:53.844 [main] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [main] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:53.853+03:00 trace-id= span-id= 11:52:53.853 [main] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [main] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:53.854+03:00 trace-id= span-id= 11:52:53.854 [main] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [main] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:53.975+03:00 trace-id= span-id= 11:52:53.975 [main] INFO  com.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6879e983
+ 1528 --- [main] [                                                 ] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6879e983
+2024-03-01T11:52:53.977+03:00 trace-id= span-id= 11:52:53.977 [main] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Start completed.
+ 1528 --- [main] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-01T11:52:54.079+03:00 trace-id= span-id= 11:52:54.079 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.087+03:00 trace-id= span-id= 11:52:54.087 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.089+03:00 trace-id= span-id= 11:52:54.089 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.102+03:00 trace-id= span-id= 11:52:54.102 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.103+03:00 trace-id= span-id= 11:52:54.103 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.113+03:00 trace-id= span-id= 11:52:54.113 [main] INFO  o.f.c.i.license.VersionPrinter -- Flyway Community Edition 9.22.3 by Redgate
+ 1528 --- [main] [                                                 ] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2024-03-01T11:52:54.114+03:00 trace-id= span-id= 11:52:54.114 [main] INFO  o.f.c.i.license.VersionPrinter -- See release notes here: https://rd.gt/416ObMi
+ 1528 --- [main] [                                                 ] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2024-03-01T11:52:54.115+03:00 trace-id= span-id= 11:52:54.115 [main] INFO  o.f.c.i.license.VersionPrinter -- 
+ 1528 --- [main] [                                                 ] o.f.c.internal.license.VersionPrinter    : 
+2024-03-01T11:52:54.133+03:00 trace-id= span-id= 11:52:54.133 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.133+03:00 trace-id= span-id= 11:52:54.133 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.144+03:00 trace-id= span-id= 11:52:54.144 [main] INFO  org.flywaydb.core.FlywayExecutor -- Database: jdbc:postgresql://localhost:5432/user_profile (PostgreSQL 16.1)
+ 1528 --- [main] [                                                 ] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/user_profile (PostgreSQL 16.1)
+2024-03-01T11:52:54.159+03:00 trace-id= span-id= 11:52:54.159 [main] WARN  o.f.c.i.database.base.Database -- Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+ 1528 --- [main] [                                                 ] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: PostgreSQL 16.1 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2024-03-01T11:52:54.175+03:00 trace-id= span-id= 11:52:54.175 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = false
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = false
+2024-03-01T11:52:54.191+03:00 trace-id= span-id= 11:52:54.191 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = true
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = true
+2024-03-01T11:52:54.192+03:00 trace-id= span-id= 11:52:54.192 [main] INFO  o.f.core.internal.command.DbValidate -- Successfully validated 0 migrations (execution time 00:00.017s)
+ 1528 --- [main] [                                                 ] o.f.core.internal.command.DbValidate     : Successfully validated 0 migrations (execution time 00:00.017s)
+2024-03-01T11:52:54.192+03:00 trace-id= span-id= 11:52:54.192 [main] WARN  o.f.core.internal.command.DbValidate -- No migrations found. Are your locations set up correctly?
+ 1528 --- [main] [                                                 ] o.f.core.internal.command.DbValidate     : No migrations found. Are your locations set up correctly?
+2024-03-01T11:52:54.194+03:00 trace-id= span-id= 11:52:54.194 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = false
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = false
+2024-03-01T11:52:54.196+03:00 trace-id= span-id= 11:52:54.196 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = true
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = true
+2024-03-01T11:52:54.231+03:00 trace-id= span-id= 11:52:54.231 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = false
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = false
+2024-03-01T11:52:54.235+03:00 trace-id= span-id= 11:52:54.235 [main] INFO  o.f.core.internal.command.DbMigrate -- Current version of schema "public": << Empty Schema >>
+ 1528 --- [main] [                                                 ] o.f.core.internal.command.DbMigrate      : Current version of schema "public": << Empty Schema >>
+2024-03-01T11:52:54.236+03:00 trace-id= span-id= 11:52:54.236 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = true
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = true
+2024-03-01T11:52:54.238+03:00 trace-id= span-id= 11:52:54.238 [main] INFO  o.f.core.internal.command.DbMigrate -- Schema "public" is up to date. No migration necessary.
+ 1528 --- [main] [                                                 ] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2024-03-01T11:52:54.239+03:00 trace-id= span-id= 11:52:54.239 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = false
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = false
+2024-03-01T11:52:54.241+03:00 trace-id= span-id= 11:52:54.241 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = true
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = true
+2024-03-01T11:52:54.241+03:00 trace-id= span-id= 11:52:54.241 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = false
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = false
+2024-03-01T11:52:54.242+03:00 trace-id= span-id= 11:52:54.242 [main] DEBUG org.postgresql.jdbc.PgConnection --   setAutoCommit = true
+ 1528 --- [main] [                                                 ] org.postgresql.jdbc.PgConnection         :   setAutoCommit = true
+2024-03-01T11:52:54.250+03:00 trace-id= span-id= 11:52:54.250 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.250+03:00 trace-id= span-id= 11:52:54.250 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.250+03:00 trace-id= span-id= 11:52:54.250 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.251+03:00 trace-id= span-id= 11:52:54.251 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.251+03:00 trace-id= span-id= 11:52:54.251 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.255+03:00 trace-id= span-id= 11:52:54.255 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.255+03:00 trace-id= span-id= 11:52:54.255 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.346+03:00 trace-id= span-id= 11:52:54.346 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.347+03:00 trace-id= span-id= 11:52:54.347 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.347+03:00 trace-id= span-id= 11:52:54.347 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.347+03:00 trace-id= span-id= 11:52:54.347 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.348+03:00 trace-id= span-id= 11:52:54.348 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.350+03:00 trace-id= span-id= 11:52:54.350 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.360+03:00 trace-id= span-id= 11:52:54.360 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.458+03:00 trace-id= span-id= 11:52:54.458 [main] INFO  o.h.jpa.internal.util.LogHelper -- HHH000204: Processing PersistenceUnitInfo [name: default]
+ 1528 --- [main] [                                                 ] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-01T11:52:54.487+03:00 trace-id= span-id= 11:52:54.487 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.487+03:00 trace-id= span-id= 11:52:54.487 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.487+03:00 trace-id= span-id= 11:52:54.487 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.487+03:00 trace-id= span-id= 11:52:54.487 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.488+03:00 trace-id= span-id= 11:52:54.488 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.489+03:00 trace-id= span-id= 11:52:54.489 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.489+03:00 trace-id= span-id= 11:52:54.489 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.554+03:00 trace-id= span-id= 11:52:54.554 [main] INFO  org.hibernate.Version -- HHH000412: Hibernate ORM core version 6.4.1.Final
+ 1528 --- [main] [                                                 ] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-03-01T11:52:54.566+03:00 trace-id= span-id= 11:52:54.566 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.566+03:00 trace-id= span-id= 11:52:54.566 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.567+03:00 trace-id= span-id= 11:52:54.567 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.567+03:00 trace-id= span-id= 11:52:54.567 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.567+03:00 trace-id= span-id= 11:52:54.567 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.568+03:00 trace-id= span-id= 11:52:54.568 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.569+03:00 trace-id= span-id= 11:52:54.569 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.686+03:00 trace-id= span-id= 11:52:54.686 [main] INFO  o.h.c.i.RegionFactoryInitiator -- HHH000026: Second-level cache disabled
+ 1528 --- [main] [                                                 ] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-01T11:52:54.722+03:00 trace-id= span-id= 11:52:54.722 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.723+03:00 trace-id= span-id= 11:52:54.723 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.723+03:00 trace-id= span-id= 11:52:54.723 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.723+03:00 trace-id= span-id= 11:52:54.723 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.724+03:00 trace-id= span-id= 11:52:54.724 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.725+03:00 trace-id= span-id= 11:52:54.725 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.726+03:00 trace-id= span-id= 11:52:54.726 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.804+03:00 trace-id= span-id= 11:52:54.804 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.805+03:00 trace-id= span-id= 11:52:54.805 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.808+03:00 trace-id= span-id= 11:52:54.808 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.808+03:00 trace-id= span-id= 11:52:54.808 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.808+03:00 trace-id= span-id= 11:52:54.808 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.810+03:00 trace-id= span-id= 11:52:54.810 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.811+03:00 trace-id= span-id= 11:52:54.811 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:54.942+03:00 trace-id= span-id= 11:52:54.942 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:54.942+03:00 trace-id= span-id= 11:52:54.942 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:54.942+03:00 trace-id= span-id= 11:52:54.942 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:54.942+03:00 trace-id= span-id= 11:52:54.942 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:54.942+03:00 trace-id= span-id= 11:52:54.942 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:54.943+03:00 trace-id= span-id= 11:52:54.943 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:54.944+03:00 trace-id= span-id= 11:52:54.944 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:55.006+03:00 trace-id= span-id= 11:52:55.006 [HikariPool-1 connection adder] DEBUG org.postgresql.Driver -- Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/user_profile
+2024-03-01T11:52:55.006+03:00 trace-id= span-id= 11:52:55.006 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection -- PostgreSQL JDBC Driver 42.6.0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.6.0
+2024-03-01T11:52:55.006+03:00 trace-id= span-id= 11:52:55.006 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setDefaultFetchSize = 0
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2024-03-01T11:52:55.006+03:00 trace-id= span-id= 11:52:55.006 [HikariPool-1 connection adder] DEBUG org.postgresql.jdbc.PgConnection --   setPrepareThreshold = 5
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2024-03-01T11:52:55.007+03:00 trace-id= span-id= 11:52:55.007 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Trying to establish a protocol version 3 connection to localhost:5432
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
+2024-03-01T11:52:55.008+03:00 trace-id= span-id= 11:52:55.008 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Receive Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 65,536
+2024-03-01T11:52:55.008+03:00 trace-id= span-id= 11:52:55.008 [HikariPool-1 connection adder] DEBUG o.p.core.v3.ConnectionFactoryImpl -- Send Buffer Size is 65,536
+ 1528 --- [HikariPool-1 connection adder] [                                                 ] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 65,536
+2024-03-01T11:52:55.182+03:00 trace-id= span-id= 11:52:55.182 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo -- No LoadTimeWeaver setup: ignoring JPA class transformer
+ 1528 --- [main] [                                                 ] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T11:52:55.681+03:00 trace-id= span-id= 11:52:55.681 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator -- HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+ 1528 --- [main] [                                                 ] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-01T11:52:55.687+03:00 trace-id= span-id= 11:52:55.687 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Initialized JPA EntityManagerFactory for persistence unit 'default'
+ 1528 --- [main] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-01T11:52:55.833+03:00 trace-id= span-id= 11:52:55.833 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration -- spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+ 1528 --- [main] [                                                 ] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T11:52:56.792+03:00 trace-id= span-id= 11:52:56.792 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver -- Exposing 2 endpoint(s) beneath base path '/actuator'
+ 1528 --- [main] [                                                 ] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2024-03-01T11:52:57.076+03:00 trace-id= span-id= 11:52:57.076 [main] INFO  o.a.t.u.net.NioEndpoint.certificate -- Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\-\.keystore] using alias [user_profile_keystore_dev] with trust store [null]
+ 1528 --- [main] [                                                 ] o.a.t.util.net.NioEndpoint.certificate   : Connector [https-jsse-nio-8080], TLS virtual host [_default_], certificate type [UNDEFINED] configured from keystore [C:\Users\-\.keystore] using alias [user_profile_keystore_dev] with trust store [null]
+2024-03-01T11:52:57.091+03:00 trace-id= span-id= 11:52:57.091 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer -- Tomcat started on port 8080 (https) with context path ''
+ 1528 --- [main] [                                                 ] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (https) with context path ''
+2024-03-01T11:52:57.102+03:00 trace-id= span-id= 11:52:57.102 [main] INFO  c.i.u.u.UserProfileServiceApplication -- Started UserProfileServiceApplication in 6.983 seconds (process running for 7.828)
+ 1528 --- [main] [                                                 ] c.i.u.u.UserProfileServiceApplication    : Started UserProfileServiceApplication in 6.983 seconds (process running for 7.828)
+2024-03-01T11:52:57.638+03:00 trace-id= span-id= 11:52:57.638 [RMI TCP Connection(3)-192.168.56.1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet'
+ 1528 --- [RMI TCP Connection(3)-192.168.56.1] [                                                 ] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-01T11:52:57.638+03:00 trace-id= span-id= 11:52:57.638 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet'
+ 1528 --- [RMI TCP Connection(3)-192.168.56.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-01T11:52:57.640+03:00 trace-id= span-id= 11:52:57.640 [RMI TCP Connection(3)-192.168.56.1] INFO  o.s.web.servlet.DispatcherServlet -- Completed initialization in 2 ms
+ 1528 --- [RMI TCP Connection(3)-192.168.56.1] [                                                 ] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-03-01T11:53:36.206+03:00 trace-id=a97c47cb1c5b9fcd824f8e148bd87548 span-id=ea1f5b7a0bdcc612 11:53:36.206 [https-jsse-nio-8080-exec-3] INFO  c.i.u.u.micrometer.ExampleController -- This is a info message
+ 1528 --- [https-jsse-nio-8080-exec-3] [a97c47cb1c5b9fcd824f8e148bd87548-ea1f5b7a0bdcc612] c.i.u.u.micrometer.ExampleController     : This is a info message
+2024-03-01T11:53:36.207+03:00 trace-id=a97c47cb1c5b9fcd824f8e148bd87548 span-id=ea1f5b7a0bdcc612 11:53:36.207 [https-jsse-nio-8080-exec-3] WARN  c.i.u.u.micrometer.ExampleController -- This is a warn message
+ 1528 --- [https-jsse-nio-8080-exec-3] [a97c47cb1c5b9fcd824f8e148bd87548-ea1f5b7a0bdcc612] c.i.u.u.micrometer.ExampleController     : This is a warn message
+2024-03-01T11:53:36.207+03:00 trace-id=a97c47cb1c5b9fcd824f8e148bd87548 span-id=ea1f5b7a0bdcc612 11:53:36.207 [https-jsse-nio-8080-exec-3] ERROR c.i.u.u.micrometer.ExampleController -- This is an error message
+ 1528 --- [https-jsse-nio-8080-exec-3] [a97c47cb1c5b9fcd824f8e148bd87548-ea1f5b7a0bdcc612] c.i.u.u.micrometer.ExampleController     : This is an error message
+2024-03-01T11:58:34.288+03:00 trace-id= span-id= 11:58:34.288 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default'
+ 1528 --- [SpringApplicationShutdownHook] [                                                 ] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-01T11:58:34.295+03:00 trace-id= span-id= 11:58:34.295 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated...
+ 1528 --- [SpringApplicationShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-01T11:58:34.310+03:00 trace-id= span-id= 11:58:34.310 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed.
+ 1528 --- [SpringApplicationShutdownHook] [                                                 ] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

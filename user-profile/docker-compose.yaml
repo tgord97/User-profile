@@ -1,8 +1,13 @@
 version: '3.8'
 
+networks:
+  user-profile-network:
+    driver: bridge
+
 services:
 
   user-profile-service:
+    restart: unless-stopped
     image: user-profile-service
     build:
       dockerfile: Dockerfile
@@ -12,9 +17,11 @@ services:
       - "8443:8443"
     depends_on:
       - postgres
+    networks:
+      - user-profile-network
 
   postgres:
-    container_name: postgres-container
+    container_name: postgres
     image: postgres:14.10
     environment:
       POSTGRES_DB: "user_profile"
@@ -22,13 +29,18 @@ services:
       POSTGRES_PASSWORD: "postgres"
     ports:
       - "5432:5432"
+    networks:
+      - user-profile-network
 
   pgadmin:
     container_name: pgadmin-container
     image: dpage/pgadmin4
     environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "8888:80"
     depends_on:
       - postgres
+    networks:
+      - user-profile-network
