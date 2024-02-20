@@ -1,17 +1,24 @@
 version: '3.8'
 
+networks:
+  user-profile-network:
+    driver: bridge
+
 services:
 
   user-profile-service:
     image: user-profile-service
     build:
-      dockerfile: Dockerfile
+      context: ../user-profile
+      dockerfile: ../user-profile/Dockerfile
     container_name: user-profile-service
     ports:
       - "8080:8080"
       - "8443:8443"
     depends_on:
       - postgres
+    networks:
+      - user-profile-network
 
   postgres:
     container_name: postgres-container
@@ -20,15 +27,22 @@ services:
       POSTGRES_DB: "user_profile"
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - ./pg_data_e2e:/var/lib/postgresql/data
     ports:
       - "5432:5432"
+    networks:
+      - user-profile-network
 
   pgadmin:
     container_name: pgadmin-container
     image: dpage/pgadmin4
     environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: root
     ports:
       - "8888:80"
     depends_on:
       - postgres
+    networks:
+      - user-profile-network
