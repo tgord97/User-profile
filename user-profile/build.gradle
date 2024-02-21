@@ -22,19 +22,18 @@ configurations {
 repositories {
 	mavenCentral()
 }
-publishing {
 
+publishing {
 	repositories {
 		maven {
-			name = "GitHub"
-			url = uri("https://github.com/iPrody/iPrody-Devs-Gr0000000006-user-profile.git")
+			name = "GitHubPackages"
+			url = "https://maven.pkg.github.com/iPrody/iPrody-Devs-Gr0000000006-user-profile"
 			credentials {
-				username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
-				password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+				username = System.getenv("GITHUB_USERNAME")
+				password = System.getenv("GITHUB_TOKEN")
 			}
 		}
 	}
-
 	publications {
 		github(MavenPublication) {
 			from components.java
@@ -46,6 +45,7 @@ publishing {
 		}
 	}
 }
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -65,7 +65,6 @@ dependencies {
 	testImplementation group: 'ch.qos.logback', name: 'logback-core', version: '1.5.0'
 
 }
-
 
 test {
 	useJUnitPlatform()
