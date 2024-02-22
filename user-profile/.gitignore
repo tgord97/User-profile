@@ -1,8 +1,12 @@
-src/main/resources/application-local.properties
+security/
+application-local.properties
+application.log
+*.log
+*.p12
 HELP.md
 .gradle
 build/
-!gradle/wrapper/gradle-wrapper.jar
+!user-profile/gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 

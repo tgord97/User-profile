@@ -46,8 +46,6 @@ publishing {
 	}
 }
 
-
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -58,7 +56,16 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'io.projectreactor:reactor-test'
-	testImplementation group: 'junit', name: 'junit', version: '4.13.2'
+	testImplementation group: 'junit', name: 'junit'
+
+	implementation(platform("io.micrometer:micrometer-tracing-bom:1.0.0"))
+	implementation("io.micrometer:micrometer-tracing")
+	implementation("io.micrometer:micrometer-tracing-bridge-otel")
+
+	implementation("io.opentelemetry:opentelemetry-exporter-zipkin")
+
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+
 }
 
 
