@@ -7,10 +7,11 @@ networks:
 services:
 
   user-profile-service:
-    restart: unless-stopped
-    image: user-profile-service
+    #    restart: unless-stopped
+    image: user-profile-service:latest
     build:
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: user-profile/Dockerfile
     container_name: user-profile-service
     ports:
       - "8080:8080"
@@ -28,7 +29,7 @@ services:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
     ports:
-      - "5432:5432"
+      - "5432"
     networks:
       - user-profile-network
 
@@ -44,3 +45,19 @@ services:
       - postgres
     networks:
       - user-profile-network
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./config/prometheus.yml:/etc/prometheus/prometheus.yml
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
