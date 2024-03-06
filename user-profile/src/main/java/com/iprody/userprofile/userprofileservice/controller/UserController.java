@@ -5,7 +5,6 @@ import com.iprody.userprofile.userprofileservice.entity.User;
 import com.iprody.userprofile.userprofileservice.service.UserService;
 import lombok.AllArgsConstructor;
 import org.modelmapper.ModelMapper;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,8 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
 
-import java.util.NoSuchElementException;
+import java.net.URI;
 
 /**
  * Controller class for managing user-related API endpoints.
@@ -42,10 +42,10 @@ public class UserController {
      * @return ResponseEntity with the found User object and HTTP status code.
      */
     @GetMapping()
-    public ResponseEntity<UserDto> findUserById(@RequestParam Long id) {
-        var userOptional = userService.findUserById(id);
-        return userOptional.map(value -> new ResponseEntity<>(modelMapper.map(value, UserDto.class), HttpStatus.OK)).
-                orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public Mono<ResponseEntity<UserDto>> findUserById(@RequestParam Long id) {
+        var userMono = userService.findUserById(id);
+        return userMono.flatMap(foundedUser -> Mono.just(ResponseEntity.ok(modelMapper.map(foundedUser, UserDto.class)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build())));
     }
 
     /**
@@ -54,14 +54,14 @@ public class UserController {
      * @param userDto The DTO object representing the user to be created.
      * @return ResponseEntity with the created UserDto object and HTTP status code.
      */
+
     @PostMapping("/add")
-    public ResponseEntity<UserDto> saveUser(@RequestBody UserDto userDto) {
-        try {
-            var createdUser = userService.createUser(modelMapper.map(userDto, User.class));
-            return new ResponseEntity<>(modelMapper.map(createdUser, UserDto.class), HttpStatus.CREATED);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public Mono<ResponseEntity<UserDto>> saveUser(@RequestBody UserDto userDto) {
+        var createdUser = userService.createUser(modelMapper.map(userDto, User.class));
+        return createdUser.flatMap(value ->
+                        Mono.just(ResponseEntity.created(URI.create("/users/" + value.getId()))
+                        .body(modelMapper.map(value, UserDto.class))))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }
 
     /**
@@ -72,13 +72,10 @@ public class UserController {
      * @return ResponseEntity with the updated UserDto object and HTTP status code.
      */
     @PostMapping("/update")
-    public ResponseEntity<UserDto> updateUser(@RequestParam Long id, @RequestBody UserDto userDto) {
-        try {
-            var user = userService.updateUser(id, modelMapper.map(userDto, User.class));
-            return new ResponseEntity<>(modelMapper.map(user, UserDto.class), HttpStatus.OK);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+    public Mono<ResponseEntity<UserDto>> updateUser(@RequestParam Long id, @RequestBody UserDto userDto) {
+        var userMono = userService.updateUser(id, modelMapper.map(userDto, User.class));
+        return userMono.flatMap(updatedUser -> Mono.just(ResponseEntity.ok(modelMapper.map(updatedUser, UserDto.class)))
+                .switchIfEmpty(Mono.just(ResponseEntity.notFound().build())));
     }
 
 }

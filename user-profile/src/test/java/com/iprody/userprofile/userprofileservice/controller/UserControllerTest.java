@@ -1,129 +1,154 @@
 package com.iprody.userprofile.userprofileservice.controller;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.MethodOrderer;
+import com.iprody.userprofile.userprofileservice.AbstractIntegrationTest;
+import com.iprody.userprofile.userprofileservice.dto.UserDto;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
+import org.springframework.test.web.reactive.server.WebTestClient;
+import org.springframework.web.reactive.function.BodyInserters;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+/**
+ * This class contains integration tests for UserController endpoints.
+ */
+public class UserControllerTest extends AbstractIntegrationTest {
 
-
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@AutoConfigureMockMvc
-@Testcontainers
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class UserControllerTest {
-
+    private static final String TEST_FIRST_NAME = "testFirstName";
+    private static final String TEST_LAST_NAME = "testLastName";
+    private static final String TEST_EMAIL = "test@mail.ru";
+    private static final String ID_ENDPOINT = "?id={id}";
     private static final String ADD_USER_ENDPOINT = "/api/user/add";
     private static final String FIND_USER_ENDPOINT = "/api/user";
+    private static final String UPDATE_USER_ENDPOINT = "/api/user/update";
     private static final String EMAIL = "$.email";
+    private static final String FIRST_NAME = "$.firstName";
+    private static final String LAST_NAME = "$.lastName";
     private static final String BASE_URL = "http://localhost:";
-    @Container
-    private static final PostgreSQLContainer<?> POSTGRES = new PostgreSQLContainer<>("postgres:latest");
 
+    /**
+     * Local server port provided by Spring Boot for testing.
+     */
     @LocalServerPort
     private int port;
 
+    /**
+     * WebTestClient instance provided by Spring Boot for testing web applications.
+     */
     @Autowired
-    private MockMvc mockMvc;
+    private WebTestClient webTestClient;
 
     /**
-     * Method executed before running tests.
-     */
-    @BeforeAll
-    public static void beforeAll() {
-        POSTGRES.start();
-        System.setProperty("spring.datasource.url", POSTGRES.getJdbcUrl());
-        System.setProperty("spring.datasource.username", POSTGRES.getUsername());
-        System.setProperty("spring.datasource.password", POSTGRES.getPassword());
-    }
-
-    /**
-     * Method executed after running tests.
-     */
-    @AfterAll
-    public static void afterAll() {
-        POSTGRES.stop();
-    }
-
-
-    /**
-     * Test case for adding a user.
+     * Retrieves a valid UserDto for testing.
      *
-     * @throws Exception if any error occurs during the test execution.
+     * @return A valid UserDto instance.
+     */
+    private UserDto getValidUserDto() {
+       return UserDto.builder().email(TEST_EMAIL).firstName(TEST_FIRST_NAME).lastName(TEST_LAST_NAME).build();
+    }
+
+    /**
+     * Retrieves an updated UserDto for testing.
+     *
+     * @return An updated UserDto instance.
+     */
+    private UserDto getUpdatedUserDto() {
+        return UserDto.builder().email("updatedTest@mail.ru").firstName(TEST_FIRST_NAME)
+                .lastName(TEST_LAST_NAME).build();
+    }
+
+    /**
+     * Tests the scenario where a valid user is provided, expecting a successful creation response.
      */
     @Test
     @Order(1)
-    public void testAddUser() throws Exception {
-        var userJson = "{\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\",\"email\":\"ivanovmail.ru\"}";
-
-        mockMvc.perform(MockMvcRequestBuilders.post(BASE_URL + port + ADD_USER_ENDPOINT)
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(userJson))
-                .andExpect(MockMvcResultMatchers.status().isCreated());
+    public void givenValidUser_ThenReturnIsCreated() {
+        webTestClient
+                .post()
+                .uri(BASE_URL + port + ADD_USER_ENDPOINT)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromValue(getValidUserDto()))
+                .exchange()
+                .expectStatus().isCreated()
+                .expectBody().jsonPath(FIRST_NAME).isEqualTo(getValidUserDto().getFirstName())
+                .jsonPath(LAST_NAME).isEqualTo(getValidUserDto().getLastName())
+                .jsonPath(EMAIL).isEqualTo(getValidUserDto().getEmail());
     }
 
     /**
-     * Test case for finding a user by id.
+     * Tests the scenario where an invalid user is provided, expecting a bad request response.
      *
-     * @throws Exception if any error occurs during the test execution.
      */
     @Test
     @Order(2)
-    public void testFindUserById() throws Exception {
-
-        mockMvc.perform(MockMvcRequestBuilders.get(BASE_URL + port + FIND_USER_ENDPOINT + "?id=1"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(jsonPath(EMAIL).value("ivanovmail.ru"));
+    public void givenInvalidUser_ThenReturnBadRequest() {
+        webTestClient
+                .post()
+                .uri(BASE_URL + port + ADD_USER_ENDPOINT)
+                .contentType(MediaType.APPLICATION_JSON)
+                .exchange()
+                .expectStatus().isBadRequest();
     }
 
     /**
-     * Test case for updating a user.
-     *
-     * @throws Exception if any error occurs during the test execution.
+     * Tests the scenario where a valid user ID is provided, expecting a successful response.
      */
     @Test
     @Order(3)
-    public void testUpdateUser() throws Exception {
-
-        var updateUserJson = "{\"firstName\":\"Ivan\",\"lastName\":\"Ivanov\",\"email\":\"ivanov@mail.ru\"}";
-
-        mockMvc.perform(MockMvcRequestBuilders.post(BASE_URL + port + "/api/user/update?id=1")
-                        .contentType(MediaType.APPLICATION_JSON)
-                        .content(updateUserJson))
-                .andExpect(jsonPath(EMAIL).value("ivanov@mail.ru"))
-                .andExpect(MockMvcResultMatchers.status().isOk());
+    public void givenValidUserid_ThenReturnIsOk() {
+        webTestClient
+                .get()
+                .uri(BASE_URL + port + FIND_USER_ENDPOINT + ID_ENDPOINT, 1)
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody().jsonPath(FIRST_NAME).isEqualTo(getValidUserDto().getFirstName())
+                .jsonPath(LAST_NAME).isEqualTo(getValidUserDto().getLastName())
+                .jsonPath(EMAIL).isEqualTo(getValidUserDto().getEmail());
     }
 
-
-
     /**
-     * Test case for finding a user by id but user doesn't exist.
-     *
-     * @throws Exception if any error occurs during the test execution.
+     * Tests the scenario where an invalid user ID is provided, expecting a not found response.
      */
     @Test
     @Order(4)
-    public void testFindUserByIdWhenUserNotFound() throws Exception {
+    public void givenInvalidUserId_ThenReturnNotFound() {
+        webTestClient
+                .get()
+                .uri(BASE_URL + port + FIND_USER_ENDPOINT + ID_ENDPOINT, 2)
+                .exchange()
+                .expectStatus().is5xxServerError();
+    }
 
-        mockMvc.perform(MockMvcRequestBuilders.get(BASE_URL + port + FIND_USER_ENDPOINT + "?id=2"))
-                .andExpect(MockMvcResultMatchers.status().isNotFound());
+    /**
+     * Tests the scenario where a user is updated, expecting a successful response.
+     */
+    @Test
+    @Order(5)
+    public void shouldUpdateUser_ThenReturnIsOk() {
+        webTestClient
+                .post()
+                .uri(BASE_URL + port + UPDATE_USER_ENDPOINT + ID_ENDPOINT, 1)
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(BodyInserters.fromValue(getUpdatedUserDto()))
+                .exchange()
+                .expectStatus().isOk()
+                .expectBody().jsonPath(FIRST_NAME).isEqualTo(getUpdatedUserDto().getFirstName())
+                .jsonPath(LAST_NAME).isEqualTo(getUpdatedUserDto().getLastName())
+                .jsonPath(EMAIL).isEqualTo(getUpdatedUserDto().getEmail());
+    }
+
+    /**
+     * Tests the scenario where a user update request is made without providing user data.
+     */
+    @Test
+    @Order(6)
+    public void shouldUpdateUser_ThenReturnIsBadRequest() {
+        webTestClient
+                .post()
+                .uri(BASE_URL + port + UPDATE_USER_ENDPOINT + ID_ENDPOINT, 1)
+                .exchange()
+                .expectStatus().isBadRequest();
     }
 
 }
