@@ -1,8 +1,7 @@
 application-local.properties
 *.log
-security/
 application.log
-*.p12
+*.gz
 HELP.md
 .gradle
 build/
