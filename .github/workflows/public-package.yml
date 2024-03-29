@@ -19,10 +19,10 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@749f47bda3e44aa060e82d7b3ef7e40d953bd629
       - name: Set execute permission for gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x ./user-profile/gradlew
       - name: Build JAR
         run: |
-          ./gradlew bootJar
+          ./user-profile/gradlew bootJar
         working-directory: ${{ github.workspace }}
       - name: Upload JAR as Artifact
         uses: actions/upload-artifact@v3
